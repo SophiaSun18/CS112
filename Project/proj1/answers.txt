@@ -1,0 +1,213 @@
+ZeAi (Sophia) Sun
+zs35
+January 21, 2022
+Project 1
+
+Step 1. -------- <21 Jan, 23:19> -----------------
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+using namespace std;
+
+double constrain(double value, double low, double high){
+	if (value < low){
+		return low;
+	}else if (value > high){
+		return high;
+	}else{
+		return value;
+	}
+}
+
+int main() {
+
+	assert(constrain(5,1,10) == 5);
+	assert(constrain(0,1,10) == 1);
+	assert(constrain(11,1,10) == 10);
+
+	cout << "All tests passed!";
+}
+
+
+
+Step 2. -------- <21 Jan, 23:36> -----------------
+
+-----main.cpp-----
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+#include "utils.h"
+using namespace std;
+
+int main() {
+
+	assert(constrain(101) == 100);
+	assert(constrain(5) == 5);
+	assert(constrain(-1) == 0);
+
+	assert(constrain(5,1,10) == 5);
+	assert(constrain(0,1,10) == 1);
+	assert(constrain(11,1,10) == 10);
+
+	cout << "All tests passed!";
+}
+
+-----utils.cpp-----
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+using namespace std;
+
+double constrain(double value, double low = 0.0, double high = 100.0){
+	if (value < low){
+		return low;
+	}else if (value > high){
+		return high;
+	}else{
+		return value;
+	}
+}
+
+-----utils.h-----
+
+#ifndef UTILS_H_
+#define UTILS_H_
+
+double constrain(double value, double low = 0.0, double high = 100.0);
+
+#endif /* UTILS_H_ */
+
+
+
+Step 3. -------- <21 Jan, 23:55> -----------------
+
+-----main.cpp-----
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+#include "utils.h"
+using namespace std;
+
+int main() {
+
+	assert(isPrime(1) == false);
+	assert(isPrime(2) == true);
+	assert(isPrime(4) == false);
+	assert(isPrime(5) == true);
+	assert(isPrime(9) == false);
+	assert(isPrime(15) == false);
+	assert(isPrime(16) == false);
+	assert(isPrime(18) == false);
+	assert(isPrime(21) == false);
+	assert(isPrime(23) == true);
+
+	cout << "All tests passed!";
+
+}
+
+-----utils.cpp-----
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+using namespace std;
+
+double constrain(double value, double low = 0.0, double high = 100.0){
+	if (value < low){
+		return low;
+	}else if (value > high){
+		return high;
+	}else{
+		return value;
+	}
+}
+
+bool isPrime(unsigned int x){
+
+	// Keep track of how many divisors each number has.
+	int num = 0;
+
+	if (x == 1){
+		return false;
+	}else if (x == 2){
+		return true;
+	}else{
+		for (int i = 2; i <= x/2; i++){
+			if (x % i == 0){
+				// If the remainder is 0, then this is a new divisor.
+				num += 1;
+			}else{
+				num += 0;
+			}
+		}
+	}
+	
+	// If the number has no divisor, then it is a prime number.
+	// If the number has divisor, then it is not a prime number.
+	if (num == 0){
+		return true;
+	}else{
+		return false;
+	}
+	
+	return 0;
+}
+
+-----utils.h-----
+
+#ifndef UTILS_H_
+#define UTILS_H_
+
+double constrain(double value, double low = 0.0, double high = 100.0);
+
+bool isPrime(unsigned int x);
+
+#endif /* UTILS_H_ */
+
+
+
+Step 4. -------- <21 Jan, 23:55 - 22 Jan, 00:27, 22 Jan 10:00 - 10:58> -----------------
+
+-----main.cpp-----
+
+#include <iostream>
+#include <string>
+#include <assert.h>
+#include "utils.h"
+using namespace std;
+
+void findNPrimes(unsigned primes[], unsigned size){
+
+	// Keep track of the number of values in the list. 
+	int num = 0;
+
+	// Testing begins with 1, and increases 1 every time the loop starts.
+	// The number of values * 4 = The size of the array.
+	// When the size of the array is smaller than the given size, the loop should keep going until the array is full.
+	for (int x = 1; num * 4 < size; x++){
+		if (isPrime(x) == true){
+			primes[num] = x;
+			num ++;
+		}
+	}
+}
+
+
+int main() {
+
+	unsigned arr[100];
+
+	findNPrimes(arr, 400);
+
+	assert(arr[0] == 2);
+	assert(arr[10] == 31);
+	assert(arr[50] == 233);
+	assert(arr[99] == 541);
+
+	cout << "All tests passed!";
+
+}

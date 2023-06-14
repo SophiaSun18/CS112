@@ -1,0 +1,38 @@
+Script started on Mon Feb 14 23:28:07 2022
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 proj4 % [K[?2004hccd Debug[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4/Debug[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 Debug % [K[?2004hlls[?2004l
+App.d		Vec.o		main.d		objects.mk	subdir.mk
+App.o		VecTester.d	main.o		proj4		tester.d
+Vec.d		VecTester.o	makefile	sources.mk	tester.o
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4/Debug[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 Debug % [K[?2004hmmake all[?2004l
+make: Nothing to be done for `all'.
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4/Debug[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 Debug % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 proj4 % [K[?2004h/ ../Debug/proj4[?2004l
+Testing class Vec
+Testing default constructor... Passed!
+Testing explicit constructor...  1  2  3  4 Passed!
+Testing copy constructor... 1  2  3 Passed!
+Testing destructor... Passed, but make sure ~Vec() is returning the array's memory to the system!
+Testing =... 0  1  2  3  4  5  6 Passed!
+Testing getSize()... 1  2 Passed!
+Testing setItem()...  0  1  2 Passed!
+Testing getItem()...  0  1  2 Passed!
+Testing setSize()... 0  1  2  3  4 Passed!
+Testing ==... 1  2  3  4  5  6  7 Passed!
+Testing writeTo(ostream)... Passed! See 'vecStreamOut.txt' for values...
+Testing readFrom(istream)... Passed!
+Testing subscript...  0 value 111
+22
+33
+ 1  Passed!
+Testing +...  1  2  3  4 Passed!
+Testing -...  1  2  3  4 Passed!
+All tests passed!
+[1m[7m%[27m[1m[0m                                                                                ]7;file://DESKTOP-CEKFE6-2.local/Users/sza/Desktop/proj4[0m[27m[24m[Jsza@DESKTOP-CEKFE6-2 proj4 % [K[?2004h[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Mon Feb 14 23:28:35 2022

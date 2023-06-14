@@ -1,0 +1,113 @@
+ZeAi (Sophia) Sun
+zs35
+January 12, 2022
+Project 0
+
+Step 3. --------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	const unsigned int BIG_NUMBER = 10000000;
+	string FirstName = "ZeAi";
+	char LastName = 'S';
+	double PI = 3.1415;
+	bool enable = false;
+	long number = 0;
+}
+
+Step 4. --------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	const unsigned int BIG_NUMBER = 10000000;
+	string FirstName = "ZeAi";
+	char LastName = 'S';
+	double PI = 3.1415;
+	bool enable = false;
+	long number = 0;
+
+	const unsigned int* px1 = &BIG_NUMBER;
+	cout << "The location of BIG_NUMBER is: " << px1 << endl;
+
+	string* px2 = &FirstName;
+	cout << "The location of FirstName is: " << px2 << endl;
+
+	char* px3 = &LastName;
+	cout << "The location of LastName is: " << px3 << endl;
+
+	double* px4 = &PI;
+	cout << "The location of PI is: " << px4 << endl;
+
+	bool* px5 = &enable;
+	cout << "The location of enable is: " << px5 << endl;
+
+	long* px6 = &number;
+	cout << "The location of number is: " << px6 << endl;
+}
+
+result:
+The location of BIG_NUMBER is: 0x7ff7b5e3227c
+The location of FirstName is: 0x7ff7b5e32260
+The location of LastName is: SZeAi
+The location of PI is: 0x7ff7b5e32250
+The location of enable is: 0x7ff7b5e3224f
+The location of number is: 0x7ff7b5e32240
+
+Step 5. --------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	int num = 37;
+	cout << "The value of num in decimal is: " << dec << num << endl;
+	cout << "The value of num in octal is: " <<oct << num << endl;
+	cout << "The value of num in hexadecimal is: " <<hex << num << endl;
+}
+
+result:
+The value of num in decimal is: 37
+The value of num in octal is: 45
+The value of num in hexadecimal is: 25
+
+Step 6. --------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	float arr[20];
+	cout << "The size of arr is: "<< sizeof arr;
+}
+
+result:
+The size of arr is: 80
+
+Step 7. --------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	float arr[20];
+	cout << "The size of arr is: "<< sizeof arr << endl;
+
+	float* fx = &arr[7];
+	arr[7] = 17.771;
+	cout << "The value of the 7th item in the array is: "<< arr[7] << endl;
+	cout << "The location that the pointer is pointing to is: " << fx << endl;
+}
+
+result:
+The size of arr is: 80
+The value of the 7th item in the array is: 17.771
+The location that the pointer is pointing to is: 0x7ff7bf00123c

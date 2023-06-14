@@ -1,0 +1,295 @@
+Student name: ZeAi Sun
+Date: January 18, 2022
+For: CS 112, Lab 1 at Calvin University.
+
+
+Step 1. --------- <18 Jan, 13:01> -------------------------------
+
+int main(){
+
+	cout << "Enter your grade: ";
+
+	unsigned gradeValue;
+	cin >> gradeValue;
+
+	char grade;
+
+	// Compute the letter grade based on the number grade.
+	if (gradeValue < 60){
+		grade = 'F';
+	}else if (gradeValue < 70){
+		grade = 'D';
+	}else if (gradeValue < 80){
+		grade = 'C';
+	}else if (gradeValue < 90){
+		grade = 'B';
+	}else{
+		grade = 'A';
+	}
+
+	cout << "Your grade is " << grade << "." << endl;
+}
+
+sample output:
+Enter your grade: 65
+Your grade is D.
+
+Step 2. --------- <18 Jan, 13:19> -------------------------------
+
+int main(){
+
+	string planName;
+	unsigned month;
+	unsigned cost;
+
+	cout << "Enter the name of your plan: ";
+	cin >> planName;
+
+	cout << "Enter the number of months: ";
+	cin >> month;
+
+	// Compute the cost of each kind of plan.
+	if (planName == "silver"){
+		if (month == 1){
+			cost = 90;
+		}else if (month < 6){
+			cost = 60;
+		}else{
+			cost = 60;
+		}
+	}else if (planName == "gold"){
+		if (month == 1){
+			cost = 90;
+		}else if (month < 6){
+			cost = 70;
+		}else{
+			cost = 35;
+		}
+	}
+
+	cout << "The cost for your plan is $" << cost << ".";
+}
+
+sample output:
+Enter the name of your plan: gold
+Enter the number of months: 10
+The cost for your plan is $35.
+
+Step 3. --------- <18 Jan, 13:29> -------------------------------
+
+int main(){
+
+	string planName;
+	unsigned month;
+	unsigned cost;
+
+	// Ask for a plan name from the user and only proceed to the next part when the plan name is valid.
+	while (true){
+		cout << "Enter the name of your plan: ";
+		cin >> planName;
+
+		if (planName != "silver" and planName != "gold" ){
+			cout << "I'm sorry, " << planName << " is not a known plan." << endl;
+		}else{
+			break;
+		}
+	}
+
+	cout << "Enter the number of months: ";
+	cin >> month;
+
+	if (planName == "silver"){
+		if (month == 1){
+			cost = 90;
+		}else if (month < 6){
+			cost = 60;
+		}else{
+			cost = 60;
+		}
+	}else if (planName == "gold"){
+		if (month == 1){
+			cost = 90;
+		}else if (month < 6){
+			cost = 70;
+		}else{
+			cost = 35;
+		}
+	}
+
+	cout << "The cost for your plan is $" << cost << ".";
+}
+
+sample output:
+Enter the name of your plan: maroon
+I'm sorry, maroon is not a known plan.
+Enter the name of your plan: gold
+Enter the number of months: 10
+The cost for your plan is $35.
+
+Step 4. --------- <18 Jan, 13:35> -------------------------------
+
+int main(){
+	char letter;
+
+	cout << "Enter a single lowercase letter: ";
+	cin >> letter;
+
+	switch (letter){
+	case 'a':
+	case 'e':
+	case 'i':
+	case 'o':
+	case 'u':
+		cout << letter << " is a vowel.";
+		break;
+	default:
+		cout << letter << " is a consonant.";
+	}
+}
+
+sample output:
+Enter a single lowercase letter: y
+y is a consonant.
+Enter a single lowercase letter: i
+i is a vowel.
+
+Step 5. --------- <18 Jan, 13:53> -------------------------------
+
+int main(){
+	unsigned values[8];
+
+	// Keep track of how many times the for loop runs.
+	int time = 0;
+
+	// Initialize a value i, add 8 to i every time the for loop runs, and store it into the array.
+	// The loop will stop when the array is full (all 8 values are stored).
+	for (int i = 0; time < 8; i += 8){
+		values[time] = i;
+		time += 1;
+	}
+
+	assert (values[0] == 0);
+	assert (values[3] == 24);
+	assert (values[7] == 56);
+}
+
+sample output:
+No output because all assert tests are passed.
+
+Step 6. --------- <18 Jan, 14:26> -------------------------------
+
+int main(){
+	double arr[100];
+	int time = 0;
+
+	// Initialize a float i, runs the loop 100 times, and gradually increases the value of i.
+	// Store the value of i into the array every time the loop ends.
+	for (float i = 0; time < 100; i += 0.1){
+		time += 1;
+		arr[time] = i;
+	}
+
+	float sum = 0;
+
+	// Run the loop 100 times and add on each item in the array to sum.
+	// Count down from index 99 to 0.
+	for (int x = 99; x >= 0; x -= 1){
+		sum += arr[x];
+	}
+
+	cout << sum;
+}
+
+sample output:
+485.1
+
+Step 7. --------- <18 Jan, 14:36> -------------------------------
+
+// Define a function and return a bool value based on whether the input is a vowel.
+bool ifVowel(char letter){
+	switch (letter){
+	case 'a':
+	case 'e':
+	case 'i':
+	case 'o':
+	case 'u':
+		return true;
+		break;
+	default:
+		return false;
+	}
+}
+
+int main(){
+
+	char letter;
+
+	cout << "Enter a single lowercase letter: ";
+	cin >> letter;
+
+	if (ifVowel(letter) == true){
+		cout << letter << " is a vowel.";
+	}else{
+		cout << letter << " is a consonant.";
+	}
+}
+
+sample output:
+Enter a single lowercase letter: c
+c is a consonant.
+Enter a single lowercase letter: a
+a is a vowel.
+
+Step 8. --------- <18 Jan, 14:51> -------------------------------
+
+// Define a function and return the name of the plan.
+string getPlan(string planName = ""){
+	cout << "Enter the name of your plan: ";
+	cin >> planName;
+	return planName;
+}
+
+// Define a function and return the number of months.
+unsigned getMonths(unsigned months = 0){
+	cout << "Enter the number of months: ";
+	cin >> months;
+	return months;
+}
+
+// Define a function to compute the cost of the plan.
+int computeCost(string planName, unsigned months){
+
+	int cost;
+
+	if (planName == "silver"){
+		if (months == 1){
+			cost = 90;
+		}else if (months < 6){
+			cost = 60;
+		}else{
+			cost = 60;
+		}
+	}else if (planName == "gold"){
+		if (months == 1){
+			cost = 90;
+		}else if (months < 6){
+			cost = 70;
+		}else{
+			cost = 35;
+		}
+	}
+
+	return cost;
+}
+
+int main(){
+	string plan = getPlan();
+	unsigned month = getMonths();
+	int cost = computeCost(plan, month);
+	cout << "The cost for your plan is $" << cost << ".";
+}
+
+sample output:
+Enter the name of your plan: gold
+Enter the number of months: 10
+The cost for your plan is $35.
